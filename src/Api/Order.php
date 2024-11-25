@@ -39,7 +39,7 @@ class Order extends PddGateWay
     }
 
     /**
-     * 订单列表详情
+     * 订单列表
      *
      * @param $client_params
      *
@@ -55,6 +55,6 @@ class Order extends PddGateWay
             $params = array_merge($params, $client_params);
         }
 
-        return $this->send('/pdd/order_detail', $params, "POST");
+        return $this->send('/pdd/orderlist', $params, "POST");
     }
 }
