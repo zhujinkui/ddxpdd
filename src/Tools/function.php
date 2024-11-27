@@ -14,3 +14,17 @@ if (!function_exists('split_to_yuan')) {
         return $value ? sprintf("%." . $float . "f", $value / 100) : sprintf("%." . $float . "f", 0);
     }
 }
+
+if (!function_exists('trim_zero')) {
+    /**
+     * 去除无效的精度
+     *
+     * @param $money
+     *
+     * @return string
+     */
+    function trim_zero($money): string
+    {
+        return rtrim(rtrim(sprintf("%.10f", $money), '0'), '.');
+    }
+}
